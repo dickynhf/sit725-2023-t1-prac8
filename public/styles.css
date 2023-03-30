@@ -1,0 +1,37 @@
+.nav-bar-size {
+    width: 95%;
+    background-color: #e57373;
+}
+
+.user-image-size {
+    height: 64px;
+}
+
+.nav-wrapper li {
+    list-style-type: none;
+}
+
+.main-body {
+    background-color: #F28487;
+    color: white;
+    height: auto;
+}
+
+.materialboxed-image {
+    margin: 0 auto;
+    height: 400px;
+}
+
+.click-me-button {
+    background-color: #EE6E73;
+    margin-top: 50px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
