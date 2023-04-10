@@ -16,6 +16,27 @@ const cardList = [
       "Clefable (ピクシー, Pikushii) is a Fairy-type Pokémon introduced in Generation I. Clefable resembles a larger Clefairy, with bigger ears and tail, larger wings, and no claws on its hands.",
   },
 ];
+
+const addPokemon = (pokemon) => {
+  $.ajax({
+    url: '/api/pokemon',
+    data: pokemon,
+    type: 'POST',
+    success: (result) => {
+      alert(result.message);
+      location.reload();
+    },
+  });
+};
+
+const getPokemon = () => {
+  $.get('/api/pokemon', (response) => {
+    if (response.statusCode === 200) {
+      addCards(response.data);
+    }
+  });
+};
+
 const footerSentences = [
   "Thanks for visiting!",
   "Come back soon!",
@@ -29,12 +50,13 @@ document.getElementById("footer-sentence").textContent = footerSentence;
 
 const submitForm = () => {
   let formData = {};
-  formData.first_name = $("#first_name").val();
-  formData.last_name = $("#last_name").val();
-  formData.password = $("#password").val();
-  formData.email = $("#email").val();
+  formData.title = $("#title").val();
+  formData.image = $("#image").val();
+  formData.link = $("#link").val();
+  formData.desciption = $("#desciption").val();
 
   console.log("Form Data Submitted: ", formData);
+  addPokemon(formData);
   window.alert("Form Submitted Successfully!");
   $(".modal").modal("close");
 };
@@ -49,7 +71,9 @@ const addCards = (items) => {
       '</div><div class="card-content">' +
       '<span class="card-title activator grey-text text-darken-4">' +
       item.title +
-      '<i class="material-icons right">more_vert</i></span><p><a href="'+item.url+'">' +
+      '<i class="material-icons right">more_vert</i></span><p><a href="' +
+      item.url +
+      '">' +
       item.link +
       "</a></p></div>" +
       '<div class="card-reveal pink lighten-3">' +
@@ -70,6 +94,7 @@ $(document).ready(function () {
     submitForm();
   });
 
-  addCards(cardList);
+  getPokemon();
+
   $(".modal").modal();
 });

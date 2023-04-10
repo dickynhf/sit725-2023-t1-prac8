@@ -1,7 +1,7 @@
 {
-  "name": "sit725-2023-t1-prac3",
+  "name": "sit725-2023-t1-prac4",
   "version": "1.0.0",
-  "description": "https://github.com/dickynhf/sit725-2023-t1-prac3",
+  "description": "https://github.com/dickynhf/sit725-2023-t1-prac4",
   "main": "server.js",
   "scripts": {
     "test": "on99",
@@ -9,19 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dickynhf/sit725-2023-t1-prac3.git"
+    "url": "git+https://github.com/dickynhf/sit725-2023-t1-prac4.git"
   },
   "keywords": [
     "Nodejs",
-
     "Express",
-
     "Materialize",
-
     "HTML",
-
     "JS",
-
     "CSS"
   ],
   "author": "dicky",
@@ -31,6 +26,7 @@
   },
   "homepage": "https://github.com/dickynhf/sit725-2023-t1-prac3#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^4.4.1"
   }
 }
