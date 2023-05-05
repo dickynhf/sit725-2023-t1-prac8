@@ -9,4 +9,8 @@ function getAllPokemon(callback) {
   collection.find().toArray(callback);
 }
 
-module.exports = { insertPokemon, getAllPokemon };
+const remove = (pokemon, callback) => {
+  collection.deleteOne(pokemon, callback);
+};
+
+module.exports = { insertPokemon, getAllPokemon, remove };

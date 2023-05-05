@@ -29,4 +29,19 @@ const getAllPokemon = (req, res) => {
   });
 };
 
-module.exports = { createPokemon, getAllPokemon };
+const delectePokemon = (req, res) => {
+  let pokemon = req.body;
+  model.remove(pokemon, (err, result) => {
+    if (err) {
+      res.json({ statusCode: 400, message: err });
+    } else {
+      res.json({
+        statusCode: 200,
+        data: result,
+        message: "Pokemon Successfully removed",
+      });
+    }
+  });
+}
+
+module.exports = { createPokemon, getAllPokemon,delectePokemon};
