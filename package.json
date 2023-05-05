@@ -1,7 +1,7 @@
 {
   "name": "sit725-2023-t1-prac6",
   "version": "1.0.0",
-  "description": "https://github.com/dickynhf/sit725-2023-t1-prac6",
+  "description": "https://github.com/dickynhf/sit725-2023-t1-prac7",
   "main": "server.js",
   "scripts": {
     "test": "mocha --reporter spec",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dickynhf/sit725-2023-t1-prac6.git"
+    "url": "git+https://github.com/dickynhf/sit725-2023-t1-prac7.git"
   },
   "keywords": [
     "Nodejs",
@@ -22,15 +22,17 @@
   "author": "dicky",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dickynhf/sit725-2023-t1-prac6/issues"
+    "url": "https://github.com/dickynhf/sit725-2023-t1-prac7/issues"
   },
-  "homepage": "https://github.com/dickynhf/sit725-2023-t1-prac6#readme",
+  "homepage": "https://github.com/dickynhf/sit725-2023-t1-prac7#readme",
   "dependencies": {
     "chai": "^4.3.7",
     "express": "^4.18.2",
+    "http": "^0.0.1-security",
     "mocha": "^10.2.0",
     "mongodb": "^4.4.1",
     "nodemon": "^2.0.22",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "socket.io": "^4.6.1"
   }
 }

@@ -19,9 +19,9 @@ const cardList = [
 
 const addPokemon = (pokemon) => {
   $.ajax({
-    url: '/api/pokemon',
+    url: "/api/pokemon",
     data: pokemon,
-    type: 'POST',
+    type: "POST",
     success: (result) => {
       alert(result.message);
       location.reload();
@@ -30,12 +30,17 @@ const addPokemon = (pokemon) => {
 };
 
 const getPokemon = () => {
-  $.get('/api/pokemon', (response) => {
+  $.get("/api/pokemon", (response) => {
     if (response.statusCode === 200) {
       addCards(response.data);
     }
   });
 };
+
+let socket = io();
+socket.on("number", (message) => {
+  console.log("received from server: " + message);
+});
 
 const footerSentences = [
   "Thanks for visiting!",
